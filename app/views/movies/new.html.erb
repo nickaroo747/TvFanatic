@@ -1,0 +1,13 @@
+<div class="container">
+    <h1>Add a New Discussion Topic</h1>
+    <%= form_for @movie do |f| %>
+
+    <div>
+        <%= f.label :title %>
+        <%= f.text_field :title %>
+    </div><br>
+
+    <%= f.submit "Add this Movie!", class: "btn btn-primary btn-lg" %>
+
+    <% end %>
+</div>

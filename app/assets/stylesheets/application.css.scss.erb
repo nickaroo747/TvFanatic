@@ -1,0 +1,203 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+
+
+@import 'bootstrap-sprockets';
+@import 'bootstrap';
+
+.flash {
+  padding: 15px;
+  border-radius: 10px;
+  margin: 5px;
+}
+
+html{
+   background: url(<%= asset_path 'background.jpg'%>) no-repeat center center fixed; 
+   -webkit-background-size: cover;
+   -moz-background-size: cover;
+   -o-background-size: cover;
+   background-size: cover;
+}
+
+ body {
+   color: white;
+   font-family: arial;
+   font-size: 16pt;
+   text-shadow: 0px 2px 3px #000;
+ }
+
+ .controls{
+  display: none;
+ }
+
+ .sidedock{
+  display: none;
+ }
+
+ input, button, select, textarea {
+   color: black;
+ }
+
+ .topics{
+    width: 600px;
+    margin: 0 auto;
+ }
+
+ h1 {
+  color: #fff;
+  padding-left: 0px;
+}
+
+.container{
+    width: 600px;
+    margin: 0 auto;
+}
+
+.titles{
+    margin-top: 45px;
+    text-align: center;
+}
+
+.convtopic{
+  text-align: left;
+}
+.topicbox{
+  background-color: rgba(0, 0, 0, .7);
+  width: 600px;
+  height: 225px;
+  margin: 0 auto;
+  padding:25px;
+  border-radius: 10px;
+}
+
+p {
+
+}
+
+.bg-danger {
+    margin-top: 25px;
+    background-color: #2371B7;
+}
+
+table{
+  margin: 0 auto;
+}
+
+.TopicTable{
+  width: 600px;
+  height: 600px;
+  margin: 0 auto;
+  margin-top: 175px;
+}
+
+ul{
+  padding: 20px;
+}
+
+.button-submit{
+  margin: 0 auto;
+  text-align: center;
+}
+
+.distop{
+  text-align: center;
+}
+
+.formbox{
+  text-align: center;
+}
+
+.commentreview{
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 25px;
+  font-size: 15pt;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #337ab7;
+  border-color: #2e6da4;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.commentbox{
+  background-color: rgba(5, 5, 5, .6);
+  width: 600px;
+  height: 100px;
+  margin: 0 auto;
+  padding-left: 20px;
+  padding-top: 1px;
+  border-radius: 10px;
+  margin-top: 25px;
+  font-size: 10pt;
+}
+
+h3, .h3 {
+  font-size: 10pt;
+}
+
+.topbar{
+  height: 80px;
+  width: 100%;
+  z-index: 5;
+  background-color: rgba(1, 0, 0, .4);
+  margin: 0px;
+  padding-top: 23px;
+  padding-left: 21px;
+}
+
+.postedtopics{
+  font-size: 20pt;
+  margin-right: 320px;
+}
+
+.postbox{
+  font-size: 20pt;
+  margin-right: 320px;
+  width: 600px;
+}
+
+tbody {
+  display: table-row-group;
+  vertical-align: middle;
+  border-color: inherit;
+    background-color: rgba(0, 0, 0, .8);
+  width: 600px;
+}
+
+.postedtopics {
+  font-size: 20pt;
+  margin-right: 337px;
+  margin-bottom: 50px;
+  }
+
+  td, th {
+    padding: 6px;
+    text-transform: uppercase;
+    font-size: 8pt;
+  }
+
+  body{
+    background-color: rgba(0,0,0,0.1);
+  }
+
+
+
+
+

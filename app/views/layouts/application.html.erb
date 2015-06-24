@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Topics for Discuisson</title>
+  <link href="http://vjs.zencdn.net/4.12/video-js.css" rel="stylesheet">
+<script src="http://vjs.zencdn.net/4.12/video.js"></script>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+
+<body>
+  <div class="topbar">
+    <% if logged_in? %>
+      <p>Logged in as: <%= current_user.name %> | <%= link_to 'Log Out', logout_path, method: :delete %></p>
+    <% else %>
+      <div>
+        <%= link_to 'Log In', login_path %> | <%= link_to 'Sign up', signup_path %>
+      </div></div>
+    <% end %>
+
+    <!-- begin login/logout links -->
+
+    <!-- end login/logout links -->
+
+    <!-- begin flash messages -->
+    <% if flash[:welcome] %>
+        <h4 class="bg-success flash"><%= flash[:welcome] %></h4>
+    <% end %>
+    <!-- end flash messages -->
+    <% if flash[:error] %>
+        <h4 class="bg-danger flash"><%= flash[:error] %></h4>
+    <% end %>
+
+
+    <%= yield %>
+
+
+</body>
+
+</html>

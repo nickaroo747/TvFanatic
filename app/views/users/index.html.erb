@@ -1,0 +1,12 @@
+<h1>Users</h1>
+<h1>This will be my main page with topics</h1>
+<ul>
+  <% @users.each do |user| %>
+    <li><%= user.name %> | <%= link_to "Edit", edit_user_path(user) %></li>
+  <% end %>
+</ul>
+
+<h1>Add a New Discussion Topic</h1>
+<%= form_for @movie do |f| %>
+
+
