@@ -48266,3 +48266,8 @@ Started GET "/" for 127.0.0.1 at 2015-06-23 18:49:13 -0700
 Processing by UsersController#new as HTML
   Rendered users/new.html.erb within layouts/application (1.6ms)
 Completed 200 OK in 3692ms (Views: 3691.4ms | ActiveRecord: 0.0ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (1.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('nick@example.com') LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
