@@ -48271,3 +48271,135 @@ Completed 200 OK in 3692ms (Views: 3691.4ms | ActiveRecord: 0.0ms)
   [1m[35m (0.2ms)[0m  BEGIN
   [1m[36mUser Exists (1.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('nick@example.com') LIMIT 1[0m
   [1m[35m (0.2ms)[0m  ROLLBACK
+
+
+Started GET "/" for 127.0.0.1 at 2015-06-24 17:22:10 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (6.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (39.1ms)
+Completed 200 OK in 415ms (Views: 387.4ms | ActiveRecord: 10.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-06-24 17:22:21 -0700
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 3950ms (Views: 3949.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2015-06-24 17:22:30 -0700
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 83ms (Views: 81.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2015-06-24 17:22:37 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bzV6EqodRAXk/s8m3POYyIE33tPPU5beT+ZRMBiCRWBBg4m6tIISok2Ngc+yGh1jiyWH96PCYZ9z/a7mmjuhsw==", "login"=>{"email"=>"nick@example.com", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+  [1m[35mUser Load (0.8ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1  [["email", "nick@example.com"]]
+  Rendered sessions/new.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 195ms (Views: 67.7ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2015-06-24 17:22:45 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ry6QiByyaZ136+IszLnduyDnv29s43a0tSIzNE+JNjeBmGMgAi0/Ot6YrMWiUFgQKvXmSwBygfWJOczizTDS5A==", "login"=>{"email"=>"mitchell.nicholas@yahoo.com", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1[0m  [["email", "mitchell.nicholas@yahoo.com"]]
+  Rendered sessions/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 79ms (Views: 76.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2015-06-24 17:22:50 -0700
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 73ms (Views: 72.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2015-06-24 17:23:35 -0700
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XWTv4SQd6EUNgafNyhQpZSMw4rgtb5UOfRxQ9Pw7JDpz0hxJOoK+4qTy6SSk/azOKSK7nEH+Yk9BB68ifoLA6Q==", "user"=>{"name"=>"abe", "email"=>"abe@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up!"}
+  [1m[35m (0.6ms)[0m  BEGIN
+  [1m[36mUser Exists (7.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('abe@example.com') LIMIT 1[0m
+  [1m[35mSQL (17.9ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Abe"], ["email", "abe@example.com"], ["password_digest", "$2a$10$wc1y.S4nBBbZkk5gT8Eh3uilSat5KH.kySoWU1DXPq8uf8JOZHSn."], ["created_at", "2015-06-25 00:23:35.678769"], ["updated_at", "2015-06-25 00:23:35.678769"]]
+  [1m[36m (5.3ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/users
+Completed 302 Found in 159ms (ActiveRecord: 30.9ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2015-06-24 17:23:35 -0700
+Processing by MoviesController#index as HTML
+  [1m[35mMovie Load (6.0ms)[0m  SELECT "movies".* FROM "movies"
+  Rendered movies/index.html.erb within layouts/application (10.1ms)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 4]]
+Completed 200 OK in 101ms (Views: 82.1ms | ActiveRecord: 7.8ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2015-06-24 17:50:24 -0700
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (3.8ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+Completed 200 OK in 4120ms (Views: 4118.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2015-06-24 17:50:42 -0700
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (1.5ms)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 4]]
+Completed 200 OK in 3865ms (Views: 3863.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2015-06-24 17:51:17 -0700
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.7ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+Completed 200 OK in 72ms (Views: 70.9ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2015-06-24 17:51:28 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"n4Z7IIxlpSeBAvJrsEsA+64zY1hsijPswzxFD+TjKHSxMIiIkvrzgChxvILeooVQpCE6fAAbxK3/J7rZZlrMpw==", "login"=>{"email"=>"abe@example.com", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1[0m  [["email", "abe@example.com"]]
+Redirected to http://localhost:3000/users
+Completed 302 Found in 106ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2015-06-24 17:51:28 -0700
+Processing by MoviesController#index as HTML
+  [1m[35mMovie Load (0.4ms)[0m  SELECT "movies".* FROM "movies"
+  Rendered movies/index.html.erb within layouts/application (3.6ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 4]]
+Completed 200 OK in 77ms (Views: 74.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2015-06-24 17:51:45 -0700
+Processing by MoviesController#index as HTML
+  [1m[35mMovie Load (0.3ms)[0m  SELECT "movies".* FROM "movies"
+  Rendered movies/index.html.erb within layouts/application (2.0ms)
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 4]]
+Completed 200 OK in 4069ms (Views: 4067.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2015-06-24 17:52:09 -0700
+Processing by MoviesController#index as HTML
+  [1m[35mMovie Load (0.4ms)[0m  SELECT "movies".* FROM "movies"
+  Rendered movies/index.html.erb within layouts/application (2.4ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 4]]
+Completed 200 OK in 4047ms (Views: 4045.2ms | ActiveRecord: 0.7ms)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2015-06-24 17:59:22 -0700
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Em8z3exe5qieVvE/Q4anCcdXHaNuywPrBkoBOAf1uIM82cB18sGwDzclv9YtbyKizUVEhwJa9Ko6Uf7uhUxcUA=="}
+Redirected to http://localhost:3000/login
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2015-06-24 17:59:22 -0700
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 48ms (Views: 47.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2015-06-24 17:59:24 -0700
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 69ms (Views: 67.6ms | ActiveRecord: 0.0ms)
